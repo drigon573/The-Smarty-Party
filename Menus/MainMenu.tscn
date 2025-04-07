@@ -1,34 +1,112 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjptr5inwypf2"]
+[gd_scene load_steps=9 format=3 uid="uid://cjptr5inwypf2"]
 
 [ext_resource type="Theme" uid="uid://uck8mn5qiqe2" path="res://DefaultTheme.tres" id="1_spjp0"]
 
+[sub_resource type="Gradient" id="Gradient_pumre"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mqyrr"]
+gradient = SubResource("Gradient_pumre")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_pgai5"]
+offsets = PackedFloat32Array(0, 0.292208)
+colors = PackedColorArray(0, 0.223529, 0.278431, 1, 0.360784, 0.439216, 0.72549, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0i2h4"]
+gradient = SubResource("Gradient_pgai5")
+
+[sub_resource type="Gradient" id="Gradient_2unjp"]
+offsets = PackedFloat32Array(0, 0.292208)
+colors = PackedColorArray(0, 0.223529, 0.278431, 1, 0.360784, 0.439216, 0.72549, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_07apd"]
+gradient = SubResource("Gradient_2unjp")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_852w5"]
+font_size = 45
+font_color = Color(0.796078, 0.886275, 1, 1)
+outline_size = 8
+outline_color = Color(0, 0.223529, 0.278431, 1)
+shadow_color = Color(0, 0, 0, 0.117647)
+shadow_offset = Vector2(-8, 8)
+
 [node name="MainMenu" type="Node2D"]
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="Background"]
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.36029, 0.438313, 0.72517, 1)
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="ColorRect" parent="."]
-offset_right = 178.0
-offset_bottom = 648.0
-color = Color(0, 0.223529, 0.278431, 1)
-
-[node name="Background3" type="ColorRect" parent="."]
-offset_left = 974.0
+[node name="Base Gradient" type="TextureRect" parent="Background"]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0, 0.223529, 0.278431, 1)
+texture = SubResource("GradientTexture2D_mqyrr")
+metadata/_edit_lock_ = true
 
-[node name="Control" type="Control" parent="."]
+[node name="Left Gradient" type="TextureRect" parent="Background"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_0i2h4")
+metadata/_edit_lock_ = true
+
+[node name="Right Gradient" type="TextureRect" parent="Background"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_07apd")
+metadata/_edit_lock_ = true
+
+[node name="Stripe2" type="ColorRect" parent="Background"]
+offset_left = 971.648
+offset_top = -70.0
+offset_right = 1946.65
+offset_bottom = -50.0
+rotation = 0.785398
+color = Color(0.92549, 0.886275, 0.6, 1)
+
+[node name="Stripe" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 945.648
+offset_top = -42.0
+offset_right = 1920.65
+offset_bottom = 7.00003
+rotation = 0.785398
+color = Color(0.92549, 0.886275, 0.6, 1)
+
+[node name="Main Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="Label" type="Label" parent="Main Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 40.0
+offset_right = 226.5
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "THE SMARTY PARTY"
+label_settings = SubResource("LabelSettings_852w5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -38,20 +116,20 @@ anchor_bottom = 0.5
 offset_left = -206.0
 offset_top = -177.0
 offset_right = 206.0
-offset_bottom = 177.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_spjp0")
 
-[node name="Play" type="Button" parent="Control/VBoxContainer"]
+[node name="Play" type="Button" parent="Main Menu/VBoxContainer"]
 layout_mode = 2
 text = "Play"
 
-[node name="Settings" type="Button" parent="Control/VBoxContainer"]
+[node name="Settings" type="Button" parent="Main Menu/VBoxContainer"]
 layout_mode = 2
 text = "Settings"
 
-[node name="Exit" type="Button" parent="Control/VBoxContainer"]
+[node name="Exit" type="Button" parent="Main Menu/VBoxContainer"]
 layout_mode = 2
 text = "Exit
 "
