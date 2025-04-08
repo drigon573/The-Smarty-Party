@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjptr5inwypf2"]
+[gd_scene load_steps=14 format=3 uid="uid://cjptr5inwypf2"]
 
 [ext_resource type="Theme" uid="uid://uck8mn5qiqe2" path="res://DefaultTheme.tres" id="1_spjp0"]
 
@@ -33,6 +33,24 @@ outline_color = Color(0, 0.223529, 0.278431, 1)
 shadow_color = Color(0, 0, 0, 0.117647)
 shadow_offset = Vector2(-8, 8)
 
+[sub_resource type="Gradient" id="Gradient_uh4if"]
+offsets = PackedFloat32Array(0, 0.545455)
+colors = PackedColorArray(0, 0.376471, 0.329412, 0.752941, 0, 0.376471, 0.329412, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cj5wa"]
+gradient = SubResource("Gradient_uh4if")
+height = 40
+
+[sub_resource type="Gradient" id="Gradient_1p6ir"]
+offsets = PackedFloat32Array(0.2, 0.3, 0.7, 0.8)
+colors = PackedColorArray(0, 0.376471, 0.329412, 0, 0, 0.376471, 0.329412, 0.752941, 0, 0.376471, 0.329412, 0.752941, 0, 0.376471, 0.329412, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ww4mi"]
+gradient = SubResource("Gradient_1p6ir")
+
+[sub_resource type="ImageTexture" id="ImageTexture_n4cgu"]
+
 [node name="MainMenu" type="Node2D"]
 
 [node name="Background" type="Control" parent="."]
@@ -43,30 +61,35 @@ offset_bottom = 40.0
 metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="Background"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.36029, 0.438313, 0.72517, 1)
 metadata/_edit_lock_ = true
 
 [node name="Base Gradient" type="TextureRect" parent="Background"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_mqyrr")
 metadata/_edit_lock_ = true
 
 [node name="Left Gradient" type="TextureRect" parent="Background"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_0i2h4")
 metadata/_edit_lock_ = true
 
 [node name="Right Gradient" type="TextureRect" parent="Background"]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_07apd")
 metadata/_edit_lock_ = true
 
 [node name="Stripe2" type="ColorRect" parent="Background"]
+layout_mode = 0
 offset_left = 971.648
 offset_top = -70.0
 offset_right = 1946.65
@@ -83,7 +106,23 @@ offset_bottom = 7.00003
 rotation = 0.785398
 color = Color(0.92549, 0.886275, 0.6, 1)
 
+[node name="Label -_-" type="Label" parent="Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1075.0
+offset_top = -24.0
+offset_right = 1123.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "-_-"
+label_settings = SubResource("LabelSettings_852w5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -133,3 +172,325 @@ text = "Settings"
 layout_mode = 2
 text = "Exit
 "
+
+[node name="Leaderboard" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect Back" type="TextureRect" parent="Leaderboard"]
+offset_top = 568.0
+offset_right = 1150.0
+offset_bottom = 608.0
+texture = SubResource("GradientTexture2D_cj5wa")
+
+[node name="ColorRect Title" type="TextureRect" parent="Leaderboard"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 1151.0
+offset_bottom = 106.0
+texture = SubResource("GradientTexture2D_ww4mi")
+
+[node name="Label" type="Label" parent="Leaderboard"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 40.0
+offset_right = 226.5
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "-= Leaderboards =-"
+label_settings = SubResource("LabelSettings_852w5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Back Button" type="Button" parent="Leaderboard"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -80.0
+offset_right = 165.0
+offset_bottom = -41.0
+grow_vertical = 0
+theme = ExtResource("1_spjp0")
+text = "< Back"
+
+[node name="ItemList" type="ItemList" parent="Leaderboard"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -214.5
+offset_right = 302.5
+offset_bottom = 214.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spjp0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Leaderboard/ItemList"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.5
+offset_top = -196.5
+offset_right = 270.5
+offset_bottom = 205.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Leaderboard/ItemList/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_spjp0")
+theme_override_constants/v_separation = 30
+columns = 2
+
+[node name="Names" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-= Name =-"
+
+[node name="Scores" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-= Score =-"
+
+[node name="Name1" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player 1"
+
+[node name="Score1" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100"
+
+[node name="Name2" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player 2
+"
+
+[node name="Score2" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "80"
+
+[node name="Name3" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player 3"
+
+[node name="Score3" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "60"
+
+[node name="Name4" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player 4"
+
+[node name="Score4" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "40"
+
+[node name="Name5" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player 5"
+
+[node name="Score5" type="Button" parent="Leaderboard/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "20"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Leaderboard"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -315.0
+offset_right = 206.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spjp0")
+
+[node name="Play" type="Button" parent="Leaderboard/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="Leaderboard/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Question" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="ColorRect Back" type="TextureRect" parent="Question"]
+offset_top = 568.0
+offset_right = 1150.0
+offset_bottom = 608.0
+texture = SubResource("GradientTexture2D_cj5wa")
+
+[node name="ColorRect Title" type="TextureRect" parent="Question"]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 1151.0
+offset_bottom = 106.0
+texture = SubResource("GradientTexture2D_ww4mi")
+
+[node name="Label" type="Label" parent="Question"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -226.5
+offset_top = 40.0
+offset_right = 226.5
+offset_bottom = 109.0
+grow_horizontal = 2
+text = "-= Question #3 =-"
+label_settings = SubResource("LabelSettings_852w5")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Back Button" type="Button" parent="Question"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -80.0
+offset_right = 165.0
+offset_bottom = -41.0
+grow_vertical = 0
+theme = ExtResource("1_spjp0")
+text = "< Back"
+
+[node name="ItemList" type="ItemList" parent="Question"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -302.5
+offset_top = -214.5
+offset_right = 302.5
+offset_bottom = 214.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spjp0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Question/ItemList"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.5
+offset_top = -196.5
+offset_right = 270.5
+offset_bottom = 205.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Question/ItemList/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_spjp0")
+theme_override_constants/v_separation = 30
+
+[node name="Question" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "What food was created on accident?"
+
+[node name="Name1" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Reeces Cups"
+
+[node name="Name2" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "    M&M's    "
+
+[node name="Name3" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "    Grape    "
+
+[node name="Name4" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Potato Chips"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Question"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -315.0
+offset_right = 206.0
+offset_bottom = -233.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spjp0")
+
+[node name="Play" type="Button" parent="Question/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Settings" type="Button" parent="Question/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Correct!" type="Button" parent="Question"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.5
+offset_top = -239.0
+offset_right = 109.5
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_spjp0")
+text = "Correct!"
+icon = SubResource("ImageTexture_n4cgu")

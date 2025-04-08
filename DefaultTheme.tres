@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://uck8mn5qiqe2"]
+[gd_resource type="Theme" load_steps=24 format=3 uid="uid://uck8mn5qiqe2"]
 
 [ext_resource type="StyleBox" uid="uid://biccxnvmhw3do" path="res://ButtonTheme.tres" id="1_s8mne"]
 
@@ -163,6 +163,17 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i56t6"]
+bg_color = Color(0, 0.376471, 0.329412, 0.752941)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 90
+corner_radius_bottom_right = 90
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bmt3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsjj5"]
@@ -274,6 +285,7 @@ HScrollBar/styles/scroll = SubResource("StyleBoxFlat_bbegj")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_rr7ur")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_n2v37")
 HSlider/styles/slider = SubResource("StyleBoxFlat_2sq45")
+ItemList/styles/panel = SubResource("StyleBoxFlat_i56t6")
 Label/colors/font_color = Color(0.796078, 0.886275, 1, 1)
 Label/styles/normal = SubResource("StyleBoxEmpty_6bmt3")
 LineEdit/colors/font_color = Color(0.796078, 0.886275, 1, 1)
