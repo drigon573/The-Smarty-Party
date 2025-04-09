@@ -166,6 +166,293 @@ func randomCoords():
 			name3.text = "EXTREMELY DANAGEROUS"
 			name4.text = "not at all"
 			correctAnswer = 4
+		10:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		11:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		12:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		13:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		14:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		15:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		16:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		17:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		18:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		19:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		20:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		21:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		22:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		23:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		24:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		25:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		26:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		27:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		28:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		29:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		30:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		31:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		32:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		33:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		34:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		35:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		36:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		37:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		38:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		39:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		40:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		41:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		42:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		43:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		44:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		45:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		46:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		47:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		48:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		49:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
+		50:
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			name1.text = "eh"
+			name2.text = "kinda bad"
+			name3.text = "EXTREMELY DANAGEROUS"
+			name4.text = "not at all"
+			correctAnswer = 4
 	removey(inty)
 
 func removey(inty):
