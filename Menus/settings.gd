@@ -1,8 +1,8 @@
 extends Control
 
-var master_volume: int = 0
-var music_volume: int = 0
-var sfx_volume: int = 0
+var master_volume = 0
+var music_volume = 0
+var sfx_volume = 0
 @onready var masterVolumeSlider = $"MarginContainer/VBoxContainer/Master Volume Slider"
 
 func _ready():

@@ -60,7 +60,7 @@ focus_neighbor_bottom = NodePath("../Music Volume Slider")
 focus_next = NodePath("../Music Volume Slider")
 min_value = -20.0
 max_value = 20.0
-step = 5.0
+step = 0.001
 
 [node name="Music Volume" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -83,7 +83,7 @@ focus_next = NodePath("../SFX Music Slider")
 focus_previous = NodePath("../Master Volume Slider")
 min_value = -20.0
 max_value = 20.0
-step = 5.0
+step = 0.001
 
 [node name="SFX Music" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -106,7 +106,7 @@ focus_next = NodePath("../CheckBox")
 focus_previous = NodePath("../Music Volume Slider")
 min_value = -20.0
 max_value = 20.0
-step = 5.0
+step = 0.001
 
 [node name="MuteLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cjptr5inwypf2"]
+[gd_scene load_steps=21 format=3 uid="uid://cjptr5inwypf2"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_jgjc8"]
 [ext_resource type="Theme" uid="uid://uck8mn5qiqe2" path="res://DefaultTheme.tres" id="1_spjp0"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://do5my8r2nne1k" path="res://Assets/spongebob-fail.mp3" id="5_cgase"]
 [ext_resource type="AudioStream" uid="uid://wmotssklbkru" path="res://Assets/eagle-rahhh.mp3" id="5_lcyuw"]
 [ext_resource type="PackedScene" uid="uid://dm520ml31opda" path="res://Menus/settings.tscn" id="7_asc4w"]
+[ext_resource type="Texture2D" uid="uid://cnkhjryjhvncw" path="res://Assets/pngtree-isolated-ginko-tree-png-png-image_6095192.png" id="8_pop3a"]
 
 [sub_resource type="Gradient" id="Gradient_pumre"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -135,6 +136,10 @@ text = "-_-"
 label_settings = SubResource("LabelSettings_852w5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Pngtree-isolated-ginko-tree-png-png-image6095192" type="Sprite2D" parent="."]
+position = Vector2(150, 490)
+texture = ExtResource("8_pop3a")
 
 [node name="Main Menu" type="Control" parent="."]
 layout_mode = 3

@@ -16,6 +16,7 @@ extends Node2D
 @onready var wrong = $Question/Incorrect
 @onready var wrongPlayer = $"Question/Incorrect/Wrong Player"
 @onready var questionBox = $Question/Label
+@onready var tree = $"Pngtree-isolated-ginko-tree-png-png-image6095192"
 
 @onready var correctAnswer
 @onready var questionCounter: int = 0
@@ -28,12 +29,14 @@ func _ready() -> void:
 	#get_window().position = Vector2i(2000, 750)
 	
 	mainMenu.visible = true
+	tree.visible = true
 	question.visible = false
 	correct.visible = false
 	wrong.visible = false
 	
 func _on_back_button_pressed() -> void:
 	mainMenu.visible = true
+	tree.visible = true
 	question.visible = false
 	leaderboard.visible = false
 	
@@ -41,6 +44,7 @@ func _on_back_button_pressed() -> void:
 func _on_play_pressed() -> void:
 	mainMenu.visible = false
 	question.visible = true
+	tree.visible = false
 	questionCounter += 1
 	questionBox.text = " -= Question #" + str(questionCounter) + " =- "
 	randomCoords()
@@ -164,11 +168,15 @@ func removey(inty):
 	questionTotal.remove_at(inty)
 
 func _on_settings_pressed() -> void:
+	#rotatino was set to 10.3
+	var rotation = randf_range(0, 359)
+	$Settings.rotation = rotation
 	settings.visible = true
 
 func _on_leaderboard_pressed() -> void:
 	leaderboard.visible = true
 	mainMenu.visible = false
+	tree.visible = false
 	settings.visible = false
 
 func _on_exit_pressed() -> void:
