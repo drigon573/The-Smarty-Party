@@ -1,6 +1,11 @@
 extends Node2D
 
-@onready var question = $Question/ItemList/MarginContainer/GridContainer/Question
+@onready var mainMenu = $"Main Menu"
+@onready var settings = $Settings
+@onready var leaderboard = $Leaderboard
+@onready var question = $Question
+
+@onready var questionLabel = $Question/ItemList/MarginContainer/GridContainer/Question
 @onready var name1 = $Question/ItemList/MarginContainer/GridContainer/Name1
 @onready var name2 = $Question/ItemList/MarginContainer/GridContainer/Name2
 @onready var name3 = $Question/ItemList/MarginContainer/GridContainer/Name3
@@ -12,23 +17,24 @@ extends Node2D
 @onready var wrongPlayer = $"Question/Incorrect/Wrong Player"
 @onready var questionBox = $Question/Label
 
-
 @onready var correctAnswer
 @onready var questionCounter: int = 0
 
 func _ready() -> void:
-	$"Main Menu".visible = true
-	$Question.visible = false
+	mainMenu.visible = true
+	question.visible = false
 	correct.visible = false
 	wrong.visible = false
 	
 func _on_back_button_pressed() -> void:
-	$"Main Menu".visible = true
-	$Question.visible = false
+	mainMenu.visible = true
+	question.visible = false
+	leaderboard.visible = false
+	
 
 func _on_play_pressed() -> void:
-	$"Main Menu".visible = false
-	$Question.visible = true
+	mainMenu.visible = false
+	question.visible = true
 	questionCounter += 1
 	questionBox.text = " -= Question #" + str(questionCounter) + " =- "
 	randomCoords()
@@ -75,70 +81,70 @@ func randomCoords():
 	var inty : int = randi() % levels #levels 
 	match questionTotal[inty]:
 		0:
-			question.text = "Who invented the light bulb?"
+			questionLabel.text = "Who invented the light bulb?"
 			name1.text = "Thomas Edison"
 			name2.text = "George Washington"
 			name3.text = "Willy Wonka"
 			name4.text = "Jimbo"
 			correctAnswer = 1
 		1:
-			question.text = "Who created Microsoft?"
+			questionLabel.text = "Who created Microsoft?"
 			name1.text = "Barack Obama"
 			name2.text = "Bill Gates"
 			name3.text = "Steve Jobs"
 			name4.text = "Jamieson Ford"
 			correctAnswer = 2
 		2:
-			question.text = "What type of animal is the fast blue character, Sonic?"
+			questionLabel.text = "What type of animal is the fast blue character, Sonic?"
 			name1.text = "Shark"
 			name2.text = "Bird"
 			name3.text = "Velociraptor"
 			name4.text = "Hedgehog"
 			correctAnswer = 4
 		3:
-			question.text = "Which food was created on accident?"
+			questionLabel.text = "Which food was created on accident?"
 			name1.text = "Reese's Cups"
 			name2.text = "M&M's"
 			name3.text = "Grape"
 			name4.text = "Potato Chips"
 			correctAnswer = 4
 		4:
-			question.text = "What was Ash Ketchum's first Pokemon?"
+			questionLabel.text = "What was Ash Ketchum's first Pokemon?"
 			name1.text = "Pikachu"
 			name2.text = "Squirtle"
 			name3.text = "Caterpie"
 			name4.text = "Tauros"
 			correctAnswer = 1
 		5:
-			question.text = "What is Lightning McQueen's real name?"
+			questionLabel.text = "What is Lightning McQueen's real name?"
 			name1.text = "Dante"
 			name2.text = "Lightning"
 			name3.text = "Cruz"
 			name4.text = "Montgomery"
 			correctAnswer = 4
 		6:
-			question.text = "What is the metal piece on the end of a shoelace called?"
+			questionLabel.text = "What is the metal piece on the end of a shoelace called?"
 			name1.text = "Ferrule"
 			name2.text = "Aglet"
 			name3.text = "Needle"
 			name4.text = "Eyelet"
 			correctAnswer = 2
 		7:
-			question.text = "The 16th US President was Abraham Lincoln. Who was the 17th?"
+			questionLabel.text = "The 16th US President was Abraham Lincoln. Who was the 17th?"
 			name1.text = "Abraham Lincoln"
 			name2.text = "Andrew Johnson"
 			name3.text = "Ulysses S. Grant"
 			name4.text = "Rutherford B. Hayes"
 			correctAnswer = 2
 		8:
-			question.text = "What is the densest planet in our solar system?"
+			questionLabel.text = "What is the densest planet in our solar system?"
 			name1.text = "Mars"
 			name2.text = "Neptune"
 			name3.text = "Saturn"
 			name4.text = "Earth"
 			correctAnswer = 4
 		9:
-			question.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
+			questionLabel.text = "How dangerous is the chemical dihydrogen monoxide to humans?"
 			name1.text = "eh"
 			name2.text = "kinda bad"
 			name3.text = "EXTREMELY DANAGEROUS"
@@ -152,9 +158,13 @@ func removey(inty):
 	questionTotal.remove_at(inty)
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
-	$Settings.visible = true
-	
+	settings.visible = true
+
+func _on_leaderboard_pressed() -> void:
+	leaderboard.visible = true
+	mainMenu.visible = false
+	settings.visible = false
+
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 	
