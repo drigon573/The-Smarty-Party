@@ -88,6 +88,12 @@ var levels : int = questionTotal.size() #number of floors travelled before next 
 var levelLabelNumber : int = 0 #what should the levelLabel start at
 
 func randomCoords():
+	#when click play button, repopulate the second array that questions are removed from
+	#already have one array for the toal number of questions
+	#need to make second array with quesetion numbers
+	#random number within indexes of second array
+	#display quiestion at index of (idk which array)
+	#remove from (idk which array)
 	var inty : int = randi() % levels #levels 
 	match questionTotal[inty]:
 		0:
