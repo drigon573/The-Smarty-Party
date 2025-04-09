@@ -21,6 +21,12 @@ extends Node2D
 @onready var questionCounter: int = 0
 
 func _ready() -> void:
+	#var screen = DisplayServer.get_primary_screen()
+	#OS.window_set_position(desired_position)
+	
+	#i want to get this to work but its being weird with my multiple monitors
+	#get_window().position = Vector2i(2000, 750)
+	
 	mainMenu.visible = true
 	question.visible = false
 	correct.visible = false
