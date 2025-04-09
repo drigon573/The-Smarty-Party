@@ -1,6 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cjptr5inwypf2"]
+[gd_scene load_steps=19 format=3 uid="uid://cjptr5inwypf2"]
 
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_jgjc8"]
 [ext_resource type="Theme" uid="uid://uck8mn5qiqe2" path="res://DefaultTheme.tres" id="1_spjp0"]
+[ext_resource type="AudioStream" uid="uid://dv3m5thpgv28u" path="res://Assets/1-1-088. The Whims of Fate.mp3" id="2_7atbx"]
+[ext_resource type="ButtonGroup" uid="uid://dqo68p6cbxr8" path="res://new_button_group.tres" id="4_bh8b5"]
+[ext_resource type="AudioStream" uid="uid://do5my8r2nne1k" path="res://Assets/spongebob-fail.mp3" id="5_cgase"]
+[ext_resource type="AudioStream" uid="uid://wmotssklbkru" path="res://Assets/eagle-rahhh.mp3" id="5_lcyuw"]
 
 [sub_resource type="Gradient" id="Gradient_pumre"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -52,6 +57,13 @@ gradient = SubResource("Gradient_1p6ir")
 [sub_resource type="ImageTexture" id="ImageTexture_n4cgu"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_jgjc8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7atbx")
+volume_db = -17.0
+autoplay = true
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
@@ -182,6 +194,7 @@ offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
 [node name="ColorRect Back" type="TextureRect" parent="Leaderboard"]
+layout_mode = 0
 offset_top = 568.0
 offset_right = 1150.0
 offset_bottom = 608.0
@@ -352,6 +365,7 @@ offset_bottom = 648.0
 metadata/_edit_lock_ = true
 
 [node name="ColorRect Back" type="TextureRect" parent="Question"]
+layout_mode = 0
 offset_top = 568.0
 offset_right = 1150.0
 offset_bottom = 608.0
@@ -431,27 +445,45 @@ theme_override_constants/v_separation = 30
 [node name="Question" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 text = "What food was created on accident?"
 
 [node name="Name1" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("4_bh8b5")
 text = "Reeces Cups"
 
 [node name="Name2" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("4_bh8b5")
 text = "    M&M's    "
 
 [node name="Name3" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("4_bh8b5")
 text = "    Grape    "
 
 [node name="Name4" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+toggle_mode = true
+button_group = ExtResource("4_bh8b5")
 text = "Potato Chips"
+
+[node name="Submit" type="Button" parent="Question/ItemList/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Submit Your Answer?"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Question"]
 visible = false
@@ -477,20 +509,85 @@ text = "Play"
 layout_mode = 2
 text = "Settings"
 
-[node name="Correct!" type="Button" parent="Question"]
+[node name="Correct" type="Node2D" parent="Question"]
 visible = false
-layout_mode = 1
+
+[node name="ColorRect4" type="ColorRect" parent="Question/Correct"]
+offset_left = -204.0
+offset_top = -131.0
+offset_right = 1426.0
+offset_bottom = 893.0
+color = Color(0, 1, 0, 0.290196)
+
+[node name="Correct!" type="Button" parent="Question/Correct"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.5
-offset_top = -239.0
-offset_right = 109.5
-offset_bottom = 239.0
+offset_left = 466.5
+offset_top = 85.0
+offset_right = 685.5
+offset_bottom = 563.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme = ExtResource("1_spjp0")
 text = "Correct!"
 icon = SubResource("ImageTexture_n4cgu")
+
+[node name="Correct Player" type="AudioStreamPlayer" parent="Question/Correct"]
+stream = ExtResource("5_lcyuw")
+
+[node name="Incorrect" type="Node2D" parent="Question"]
+visible = false
+
+[node name="shadow" type="ColorRect" parent="Question/Incorrect"]
+offset_left = 977.0
+offset_top = -105.0
+offset_right = 1017.0
+offset_bottom = 1097.0
+rotation = 0.785398
+color = Color(0, 0, 0, 0.623529)
+
+[node name="ColorRect" type="ColorRect" parent="Question/Incorrect"]
+offset_left = 971.0
+offset_top = -110.0
+offset_right = 1011.0
+offset_bottom = 1092.0
+rotation = 0.785398
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Question/Incorrect"]
+offset_left = 156.0
+offset_top = -79.0
+offset_right = 196.0
+offset_bottom = 1169.0
+rotation = -0.785398
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Question/Incorrect"]
+offset_left = -204.0
+offset_top = -131.0
+offset_right = 1426.0
+offset_bottom = 893.0
+color = Color(1, 0, 0, 0.290196)
+
+[node name="Label" type="Label" parent="Question/Incorrect"]
+offset_left = 518.0
+offset_top = 293.0
+offset_right = 634.0
+offset_bottom = 332.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 28
+text = "WRONG!"
+
+[node name="Wrong Player" type="AudioStreamPlayer" parent="Question/Incorrect"]
+stream = ExtResource("5_cgase")
+volume_db = -5.0
+
+[connection signal="pressed" from="Main Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Question/Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Question/ItemList/MarginContainer/GridContainer/Submit" to="." method="_on_submit_pressed"]
