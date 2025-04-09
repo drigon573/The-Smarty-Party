@@ -165,7 +165,14 @@ func randomCoords():
 func removey(inty):
 	levels -= 1
 	levelLabelNumber +=1
-	questionTotal.remove_at(inty)
+	if(levels > 0):
+		questionTotal.remove_at(inty)
+	else:
+		print("poggers")
+		mainMenu.visible = true
+		tree.visible = true
+		question.visible = false
+		leaderboard.visible = false
 
 func _on_settings_pressed() -> void:
 	#rotatino was set to 10.3
