@@ -1,0 +1,135 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm520ml31opda"]
+
+[ext_resource type="Script" path="res://Menus/settings.gd" id="1_0wei2"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_0wei2")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = -82.5
+offset_right = 88.0
+offset_bottom = 158.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MenuWall" type="Sprite2D" parent="MarginContainer/VBoxContainer/AspectRatioContainer"]
+position = Vector2(90.75, 90.5)
+scale = Vector2(1.05838, 1)
+
+[node name="Master Volume" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="Master Volume Label" type="Label" parent="MarginContainer/VBoxContainer/Master Volume"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 170.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "7"
+
+[node name="Master Volume Slider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Music Volume Slider")
+focus_next = NodePath("../Music Volume Slider")
+min_value = -20.0
+max_value = 20.0
+step = 5.0
+
+[node name="Music Volume" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Music"
+
+[node name="Music Volume Label" type="Label" parent="MarginContainer/VBoxContainer/Music Volume"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 170.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "7"
+
+[node name="Music Volume Slider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Master Volume Slider")
+focus_neighbor_bottom = NodePath("../SFX Music Slider")
+focus_next = NodePath("../SFX Music Slider")
+focus_previous = NodePath("../Master Volume Slider")
+min_value = -20.0
+max_value = 20.0
+step = 5.0
+
+[node name="SFX Music" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SFX"
+
+[node name="SFX Music Label" type="Label" parent="MarginContainer/VBoxContainer/SFX Music"]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 170.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "7"
+
+[node name="SFX Music Slider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Music Volume Slider")
+focus_neighbor_bottom = NodePath("../CheckBox")
+focus_next = NodePath("../CheckBox")
+focus_previous = NodePath("../Music Volume Slider")
+min_value = -20.0
+max_value = 20.0
+step = 5.0
+
+[node name="MuteLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Mute"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../SFX Music Slider")
+focus_neighbor_bottom = NodePath("../ReturnToMainMenu")
+focus_next = NodePath("../ReturnToMainMenu")
+focus_previous = NodePath("../SFX Music Slider")
+
+[node name="ReturnToMainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../CheckBox")
+focus_previous = NodePath("../CheckBox")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+icon_alignment = 1
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Master Volume Slider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music Volume Slider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFX Music Slider" to="." method="_on_sfx_music_slider_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ReturnToMainMenu" to="." method="_on_return_to_main_menu_pressed"]

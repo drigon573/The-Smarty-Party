@@ -10,8 +10,11 @@ extends Node2D
 @onready var correctPlayer = $"Question/Correct/Correct Player"
 @onready var wrong = $Question/Incorrect
 @onready var wrongPlayer = $"Question/Incorrect/Wrong Player"
+@onready var questionBox = $Question/Label
+
 
 @onready var correctAnswer
+@onready var questionCounter: int = 0
 
 func _ready() -> void:
 	$"Main Menu".visible = true
@@ -26,6 +29,8 @@ func _on_back_button_pressed() -> void:
 func _on_play_pressed() -> void:
 	$"Main Menu".visible = false
 	$Question.visible = true
+	questionCounter += 1
+	questionBox.text = " -= Question #" + str(questionCounter) + " =- "
 	randomCoords()
 
 func _on_submit_pressed() -> void:
@@ -58,6 +63,8 @@ func _on_submit_pressed() -> void:
 		name3.button_pressed = false
 		name4.button_pressed = false
 		#next question
+		questionCounter += 1
+		questionBox.text = " -= Question #" + str(questionCounter) + " =- "
 		randomCoords()
 	
 var questionTotal = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] #number of floors in that theme - 1 bc it starts at 0
@@ -126,7 +133,7 @@ func randomCoords():
 		8:
 			question.text = "What is the densest planet in our solar system?"
 			name1.text = "Mars"
-			name2.text = "Naptune"
+			name2.text = "Neptune"
 			name3.text = "Saturn"
 			name4.text = "Earth"
 			correctAnswer = 4
@@ -143,6 +150,14 @@ func removey(inty):
 	levels -= 1
 	levelLabelNumber +=1
 	questionTotal.remove_at(inty)
+
+func _on_settings_pressed() -> void:
+	pass # Replace with function body.
+	$Settings.visible = true
+	
+func _on_exit_pressed() -> void:
+	get_tree().quit()
+	
 
 #func disbaleExit():
 	#if !Globals.hasPlayerVisitedMinesYet:
