@@ -522,9 +522,15 @@ func removey(inty):
 
 func _on_settings_pressed() -> void:
 	#rotatino was set to 10.3
-	var rotation = randf_range(0, 359)
-	$Settings.rotation = rotation
 	settings.visible = true
+	while(settings.visible == true):
+		await get_tree().create_timer(1).timeout
+		#continuously rotate
+		#$Settings.rotation += .5
+		#randomly change rotation
+		var rotation = randf_range(0, 359)
+		$Settings.rotation = rotation
+	
 
 func _on_leaderboard_pressed() -> void:
 	leaderboard.visible = true

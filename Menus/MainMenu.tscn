@@ -138,7 +138,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main Menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -383,6 +382,7 @@ layout_mode = 2
 text = "Settings"
 
 [node name="Question" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
