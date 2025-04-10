@@ -137,16 +137,17 @@ label_settings = SubResource("LabelSettings_852w5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pngtree-isolated-ginko-tree-png-png-image6095192" type="Sprite2D" parent="."]
-position = Vector2(150, 490)
-texture = ExtResource("8_pop3a")
-
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 metadata/_edit_lock_ = true
+
+[node name="Pngtree-isolated-ginko-tree-png-png-image6095192" type="Sprite2D" parent="Main Menu"]
+position = Vector2(150, 490)
+texture = ExtResource("8_pop3a")
 
 [node name="Label" type="Label" parent="Main Menu"]
 layout_mode = 1
@@ -382,7 +383,6 @@ layout_mode = 2
 text = "Settings"
 
 [node name="Question" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -418,6 +418,51 @@ label_settings = SubResource("LabelSettings_852w5")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_lock_ = true
+
+[node name="Timer Label" type="Label" parent="Question"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -535.0
+offset_top = 28.0
+offset_right = -420.0
+offset_bottom = 97.0
+grow_horizontal = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_852w5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Category Label Category" type="Label" parent="Question"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -564.0
+offset_top = 121.0
+offset_right = -449.0
+offset_bottom = 190.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "Category:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Category Label" type="Label" parent="Question"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -458.0
+offset_top = 122.0
+offset_right = -193.0
+offset_bottom = 191.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "Category:"
+vertical_alignment = 1
 
 [node name="Back Button" type="Button" parent="Question"]
 layout_mode = 1
