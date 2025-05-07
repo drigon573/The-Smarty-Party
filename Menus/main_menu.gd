@@ -23,9 +23,12 @@ extends Node2D
 @onready var questionCounter: int = 0
 
 func _ready() -> void:
-	#leaderboard.leaderboard["name_one"] = "Smarty Arty"
-	#leaderboard.save()
-	
+	#leaderboard.maybeAddPlayersScore("Smarty", 9999)
+	#leaderboard.maybeAddPlayersScore("Arty", 600)
+	#leaderboard.maybeAddPlayersScore("James", 120)
+	#leaderboard.maybeAddPlayersScore("Marty", 80)
+	#leaderboard.maybeAddPlayersScore("Johnny", 50)
+
 	#var screen = DisplayServer.get_primary_screen()
 	#OS.window_set_position(desired_position)
 	
