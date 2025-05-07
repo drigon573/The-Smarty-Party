@@ -334,21 +334,21 @@ func randomCoords():
 			correctAnswer = 1
 			categoryLabel.text = "Science"
 		29:
-			questionLabel.text = "Who is the lil gay boy in BTS?"
-			name1.text = "Jimin"
-			name2.text = "JungleKock"
-			name3.text = "V"
-			name4.text = "Suga"
+			questionLabel.text = "?"
+			name1.text = ""
+			name2.text = ""
+			name3.text = ""
+			name4.text = ""
 			correctAnswer = 1
-			categoryLabel.text = "BTS"
+			categoryLabel.text = ""
 		30:
-			questionLabel.text = "Who is Worldwide Handsome?"
-			name1.text = "Kyle Bazil Lastname(obviously)"
-			name2.text = "Jin"
-			name3.text = "Jack Black"
-			name4.text = "Pitbull"
+			questionLabel.text = "?"
+			name1.text = ""
+			name2.text = ""
+			name3.text = ""
+			name4.text = ""
 			correctAnswer = 1
-			categoryLabel.text = "Facts"
+			categoryLabel.text = ""
 		31:
 			questionLabel.text = ""
 			name1.text = ""
