@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjptr5inwypf2"]
+[gd_scene load_steps=23 format=3 uid="uid://cjptr5inwypf2"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_jgjc8"]
 [ext_resource type="Theme" uid="uid://uck8mn5qiqe2" path="res://DefaultTheme.tres" id="1_spjp0"]
@@ -6,6 +6,7 @@
 [ext_resource type="ButtonGroup" uid="uid://dqo68p6cbxr8" path="res://new_button_group.tres" id="4_bh8b5"]
 [ext_resource type="AudioStream" uid="uid://do5my8r2nne1k" path="res://Assets/spongebob-fail.mp3" id="5_cgase"]
 [ext_resource type="AudioStream" uid="uid://wmotssklbkru" path="res://Assets/eagle-rahhh.mp3" id="5_lcyuw"]
+[ext_resource type="Script" path="res://Menus/leaderboard.gd" id="5_w2v1t"]
 [ext_resource type="PackedScene" uid="uid://dm520ml31opda" path="res://Menus/settings.tscn" id="7_asc4w"]
 [ext_resource type="Texture2D" uid="uid://cnkhjryjhvncw" path="res://Assets/pngtree-isolated-ginko-tree-png-png-image_6095192.png" id="8_pop3a"]
 
@@ -145,6 +146,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main Menu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -225,6 +227,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+script = ExtResource("5_w2v1t")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect Back" type="TextureRect" parent="Leaderboard"]
