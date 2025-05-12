@@ -1,11 +1,26 @@
 extends Control
+class_name Settings
 
-var master_volume = 0
-var music_volume = 0
-var sfx_volume = 0
+const SAVE_PATH = "user://sm_local_settings.save"
+var player_name : String
+
+var master_volume : float = 0
+var music_volume : float = 0
+var sfx_volume : float = 0
 @onready var masterVolumeSlider = $"MarginContainer/VBoxContainer/Master Volume Slider"
 
 func _ready():
+	if FileAccess.file_exists(SAVE_PATH):
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var settings : Dictionary
+		settings = JSON.parse_string(file.get_as_text())
+		
+		player_name = settings.get("name")
+		QuizHandler.playerName = player_name
+		master_volume = settings.get("master volume")
+		music_volume = settings.get("music volume")
+		sfx_volume = settings.get("sfx volume")
+	
 	$".".visible = false
 	#sets value of slider to match volume value
 	$"MarginContainer/VBoxContainer/Master Volume Slider".set_value(master_volume)
@@ -38,3 +53,13 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 func _on_return_to_main_menu_pressed() -> void:
 	$".".visible = false
+
+func _on_tree_exiting() -> void:
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var settings : Dictionary
+	settings.get_or_add("name", player_name)
+	settings.get_or_add("master volume", master_volume)
+	settings.get_or_add("music volume", music_volume)
+	settings.get_or_add("sfx volume", sfx_volume)
+
+	file.store_string(JSON.stringify(settings))

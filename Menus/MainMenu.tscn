@@ -146,7 +146,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main Menu" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
@@ -220,6 +219,15 @@ text = "Leaderboard"
 layout_mode = 2
 text = "Exit
 "
+
+[node name="NameEdit" type="LineEdit" parent="Main Menu"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 158.0
+offset_right = 280.0
+offset_bottom = 189.0
+placeholder_text = "ABC"
+max_length = 20
 
 [node name="Leaderboard" type="Control" parent="."]
 visible = false
@@ -461,33 +469,32 @@ label_settings = SubResource("LabelSettings_852w5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Category Label Category" type="Label" parent="Question"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -564.0
-offset_top = 121.0
-offset_right = -449.0
-offset_bottom = 190.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 18
-text = "Category:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Category Label" type="Label" parent="Question"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -458.0
-offset_top = 122.0
-offset_right = -193.0
-offset_bottom = 191.0
+offset_left = -551.0
+offset_top = 121.0
+offset_right = -436.0
+offset_bottom = 190.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 18
 text = "Category:"
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Question"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -551.0
+offset_top = 192.0
+offset_right = -436.0
+offset_bottom = 261.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "Score:"
 vertical_alignment = 1
 
 [node name="Back Button" type="Button" parent="Question"]
@@ -699,6 +706,7 @@ rotation = 0.179213
 [connection signal="pressed" from="Main Menu/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="Main Menu/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="text_changed" from="Main Menu/NameEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="Leaderboard/Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Question/Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Question/ItemList/MarginContainer/GridContainer/Submit" to="." method="_on_submit_pressed"]

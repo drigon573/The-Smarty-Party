@@ -1,4 +1,5 @@
 extends Control
+class_name Leaderboard
 
 @onready var items : GridContainer = $ItemList/MarginContainer/GridContainer
 const SAVE_PATH = "user://sm_local_leaderboard.save"
@@ -53,20 +54,34 @@ func save() -> void:
 		file.store_string(JSON.stringify(leaderboard))
 
 func maybeAddPlayersScore(name: String, score: int) -> void:
-	var sub = 0
 	var scores: Dictionary = leaderboard.get("scores")
 	var players: Dictionary = leaderboard.get("names")
 	var score_names = scores.keys()
 	var player_names = players.keys()
+	
+	var listNames : Array = ["", "", "", "", ""]
+	var listScores : Array = [0,0,0,0,0]
+	
+	for i in range(5):
+		listNames[i] = players[player_names[i]]
+		listScores[i] = scores[score_names[i]]
+	
+	var copiedScores : Array = listScores.duplicate()
 
-	for i in scores.values():
-		if score >= i:
-			for n in range(4-sub):
-				
-				scores[score_names[4-n]] = scores[score_names[3-n]]
-				players[player_names[4-n]] = players[player_names[3-n]]
-			scores[score_names[sub]] = score
-			players[player_names[sub]] = name
-			save()
-			return
-		sub += 1
+	print("Name "+ name + "| Score "+ str(score))
+	print("Players "+ str(listNames))
+	print("Scores "+ str(listScores))
+	for i in range(5):
+		if score >= copiedScores[i]:
+			listNames.insert(i, name)
+			listScores.insert(i, score)
+			break
+	
+	for i in range(5):
+		players[player_names[i]] = str(listNames[i])
+		scores[score_names[i]] = int(listScores[i])
+	
+	save()
+	return
+	
+	
